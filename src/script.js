@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Add a countdown timer to the event
-  const eventDate = new Date("April 15, 2025 15:00:00").getTime();
+  const eventDate = new Date("April 19, 2025 15:00:00").getTime();
 
   // Update both countdowns
   function updateCountdown() {
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (distance < 0) {
       if (document.getElementById("countdown")) {
         document.getElementById("countdown").innerHTML =
-          "<p class='text-tea-dark text-center text-xl'>O chá está acontecendo agora!</p>";
+          "<p class='text-tea-dark text-center text-xl'>O evento está acontecendo agora!</p>";
       }
       return;
     }

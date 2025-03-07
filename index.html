@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gus & Jess's Tea Party</title>
+  <title>Gus & Jess Tea Party</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
     rel="stylesheet" />
@@ -62,12 +62,14 @@
       </ul>
     </nav>
   </header>
-
+  <!-- hover:shadow-3xl w-full max-w-lg rounded-2xl  -->
+  <!-- border border-white/20 bg-white/30 p-6 shadow-2xl -->
+  <!-- shadow-black/30 backdrop-blur-lg transition-all duration-300 -->
   <!-- COUNTDOWN TIMER SECTION -->
   <section class="flex w-full justify-center px-6 py-4">
-    <div class="border-tea-dark/10 w-full max-w-2xl rounded-2xl border bg-white/80 p-6 shadow-lg backdrop-blur-sm">
+    <div class="border-tea-dark/10 w-full max-w-2xl rounded-2xl border bg-white/30  p-6 shadow-lg backdrop-blur-sm ">
       <h2 class="text-tea-dark mb-3 text-center font-serif text-2xl font-bold">
-        Countdown
+        Save the Date
       </h2>
       <div id="countdown" class="flex flex-wrap justify-center gap-3 sm:gap-6">
         <div class="flex min-w-[80px] flex-col items-center rounded-lg bg-white/70 px-4 py-2 shadow">
@@ -92,33 +94,35 @@
 
   <!-- HOME SECTION -->
   <section id="home" class="my-4 flex w-full flex-col items-center px-6">
-    <div
-      class="border-tea-dark/10 hover:shadow-tea-dark/20 w-full max-w-2xl rounded-2xl border bg-white/60 p-8 shadow-2xl transition-all duration-300">
+    <div class="w-full max-w-2xl p-8 transition-all duration-300 glass-card">
       <div class="mb-4 flex justify-center">
-        <img src="https://img.icons8.com/pastel-glyph/64/8c6e4a/teapot--v2.png" alt="Tea pot icon" class="h-20 w-20" />
+        <img src="https://img.icons8.com/pastel-glyph/64/8c6e4a/teapot--v2.png" alt="Tea pot icon"
+          class="h-20 w-20 animate-pulse" />
       </div>
       <h1 class="text-tea-dark mb-2 text-center font-serif text-4xl font-bold">
         Gus & Jess <br />
-        Tea Party
+        Chá de Panela
       </h1>
       <div class="floating-teapot mb-6">
         <img src="https://img.icons8.com/cotton/100/teapot--v1.png" alt="Decorative teapot" class="h-20" />
       </div>
       <p class="text-tea-dark/80 mb-6 text-center text-xl italic">
-        Join us for a delightful afternoon tea at our new home
+        Junte-se a nós em uma tarde de para nosso chá de panela
+        para celebrar nosso lar e nossa união
       </p>
+
       <div class="mb-4 flex flex-wrap justify-center gap-8 text-center">
         <div class="flex flex-col items-center">
           <span class="text-tea-dark/60 text-sm uppercase">Data</span>
           <span class="text-tea-dark font-serif text-xl">19 de Abril, 2025</span>
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-tea-dark/60 text-sm uppercase">Time</span>
-          <span class="text-tea-dark font-serif text-xl">3:00 PM - 6:00 PM</span>
+          <span class="text-tea-dark/60 text-sm uppercase">Horário</span>
+          <span class="text-tea-dark font-serif text-xl">15:00 - ??:??</span>
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-tea-dark/60 text-sm uppercase">Location</span>
-          <span class="text-tea-dark font-serif text-xl">123 Garden Lane</span>
+          <span class="text-tea-dark/60 text-sm uppercase">Localização</span>
+          <span class="text-tea-dark font-serif text-xl">Rua Plínio Salgado, 549</span>
         </div>
       </div>
       <div class="text-center">
@@ -158,19 +162,42 @@
         </div>
       </div>
 
-      <div class="rounded-xl bg-white/40 p-4 shadow">
+      <!-- <div class="rounded-xl bg-white/40 p-4 shadow"> -->
+      <!--   <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold"> -->
+      <!--     Localização -->
+      <!--   </h3> -->
+      <!--   <p class="text-tea-dark/80"> -->
+      <!--     Rua Plínio Salgado, 549 <br /> -->
+      <!--     Bairro Neva <br /> -->
+      <!--   </p> -->
+      <!-- </div> -->
+
+      <div class="glass hover-scale rounded-xl p-4 shadow">
         <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">
           Localização
         </h3>
         <p class="text-tea-dark/80">
-          Rua Plínio Salgado, 549 <br />
-          Bairro Neva <br />
+          <a href="https://maps.google.com/?q=Rua+Plínio+Salgado,+549,+Bairro+Neva,+Cascavel" target="_blank"
+            class="hover:bg-white/40 group flex flex-col items-start rounded-lg p-2 transition-all duration-300">
+            <span class="text-tea-dark">Rua Plínio Salgado, 549</span>
+            <span class="text-tea-dark">Bairro Neva</span>
+            <span class="text-tea-dark/60 mt-2 flex items-center text-xs">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Ver no Google Maps
+            </span>
+          </a>
         </p>
       </div>
-
+      `
       <div class="mt-8">
         <h3 class="text-tea-dark mb-4 text-center font-serif text-xl font-semibold">
-          Tea Party Gallery
+          Galeria de Momentos
         </h3>
         <div class="gallery">
           <div class="gallery-item">

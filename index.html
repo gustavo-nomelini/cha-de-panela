@@ -31,50 +31,45 @@
   </script>
 </head>
 
-<body
-  class="from-tea-light to-tea-medium flex min-h-screen flex-col items-center justify-center bg-gradient-to-b font-sans">
-  <!-- Decorative tea cups -->
-  <div class="fixed top-20 left-5 hidden md:block">
-    <div class="tea-cup"></div>
-  </div>
-
-  <div class="fixed right-5 bottom-20 hidden md:block">
-    <div class="tea-cup"></div>
-  </div>
-
+<body class="from-tea-light to-tea-medium bg-gradient-to-b font-sans">
   <!-- HEADER SECTION -->
-  <header id="header"
-    class="border-tea-dark/20 bg-tea-light/80 sticky top-0 z-50 w-full border-b text-xl shadow-md backdrop-blur-md">
-    <nav class="container mx-auto flex justify-center p-4">
-      <ul class="flex space-x-14">
-        <li>
-          <a href="#home"
-            class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full">Home</a>
-        </li>
-        <li>
-          <a href="#details"
-            class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full">Sobre</a>
-        </li>
-        <li>
-          <a href="#rsvp"
-            class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full">Forms</a>
-        </li>
-      </ul>
-    </nav>
+  <header id="header" class="glass sticky top-0 z-50 w-full border-b text-xl shadow-md backdrop-blur-md">
+    <div class="container mx-auto flex justify-between p-4 relative">
+      <!-- Navigation links - aligned left on mobile -->
+      <nav class="flex">
+        <ul class="flex space-x-4 md:space-x-14">
+          <li>
+            <a href="#home"
+              class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+          </li>
+          <li>
+            <a href="#details"
+              class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full">Sobre</a>
+          </li>
+          <li>
+            <a href="#rsvp"
+              class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full">Forms</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Tea cups - right teacup visible on mobile, both visible on desktop -->
+      <div class="block">
+        <div class="tea-cup animate-pulse"></div>
+      </div>
+    </div>
   </header>
-  <!-- hover:shadow-3xl w-full max-w-lg rounded-2xl  -->
-  <!-- border border-white/20 bg-white/30 p-6 shadow-2xl -->
-  <!-- shadow-black/30 backdrop-blur-lg transition-all duration-300 -->
+
   <!-- COUNTDOWN TIMER SECTION -->
   <section class="flex w-full justify-center px-6 py-4">
-    <div class="border-tea-dark/10 w-full max-w-2xl rounded-2xl border bg-white/30  p-6 shadow-lg backdrop-blur-sm ">
+    <div class="glass-card w-full max-w-2xl rounded-2xl border p-6 shadow-lg backdrop-blur-sm bg-white/30 border-white">
       <h2 class="text-tea-dark mb-3 text-center font-serif text-2xl font-bold">
         Save the Date
       </h2>
       <div id="countdown" class="flex flex-wrap justify-center gap-3 sm:gap-6">
         <div class="flex min-w-[80px] flex-col items-center rounded-lg bg-white/70 px-4 py-2 shadow">
           <span id="days" class="text-tea-dark font-serif text-2xl sm:text-3xl">00</span>
-          <span class="text-tea-dark/70 text-xs uppercase">Days</span>
+          <span class="text-tea-dark/70 text-xs uppercase">Dias</span>
         </div>
         <div class="flex min-w-[80px] flex-col items-center rounded-lg bg-white/70 px-4 py-2 shadow">
           <span id="hours" class="text-tea-dark font-serif text-2xl sm:text-3xl">00</span>
@@ -94,20 +89,19 @@
 
   <!-- HOME SECTION -->
   <section id="home" class="my-4 flex w-full flex-col items-center px-6">
-    <div class="w-full max-w-2xl p-8 transition-all duration-300 glass-card">
+    <div class="glass-card w-full max-w-2xl p-8 transition-all duration-300 bg-white/30 border-white">
       <div class="mb-4 flex justify-center">
-        <img src="https://img.icons8.com/pastel-glyph/64/8c6e4a/teapot--v2.png" alt="Tea pot icon"
-          class="h-20 w-20 animate-pulse" />
+        <img src="img/tea-pot-svgrepo-com.svg" alt="Tea pot icon" class="h-20 w-20 animate-pulse" />
       </div>
       <h1 class="text-tea-dark mb-2 text-center font-serif text-4xl font-bold">
         Gus & Jess <br />
         Chá de Panela
       </h1>
       <div class="floating-teapot mb-6">
-        <img src="https://img.icons8.com/cotton/100/teapot--v1.png" alt="Decorative teapot" class="h-20" />
+        <img src="img/star-fall-svgrepo-com.svg" alt="Decorative teapot" class="h-20" />
       </div>
       <p class="text-tea-dark/80 mb-6 text-center text-xl italic">
-        Junte-se a nós em uma tarde de para nosso chá de panela
+        Junte-se a nós em uma tarde para nosso chá de panela
         para celebrar nosso lar e nossa união
       </p>
 
@@ -118,7 +112,7 @@
         </div>
         <div class="flex flex-col items-center">
           <span class="text-tea-dark/60 text-sm uppercase">Horário</span>
-          <span class="text-tea-dark font-serif text-xl">15:00 - ??:??</span>
+          <span class="text-tea-dark font-serif text-xl">15:00 - 00:00</span>
         </div>
         <div class="flex flex-col items-center">
           <span class="text-tea-dark/60 text-sm uppercase">Localização</span>
@@ -127,20 +121,20 @@
       </div>
       <div class="text-center">
         <a href="#rsvp"
-          class="btn-tea bg-tea-dark hover:bg-tea-dark/80 inline-block rounded-full px-8 py-3 font-medium text-white transition-colors">Forms</a>
+          class="btn-glass inline-block rounded-full px-8 py-3 font-medium text-white transition-all">Forms</a>
       </div>
     </div>
   </section>
 
   <!-- DETAILS SECTION -->
   <section id="details" class="my-10 flex w-full flex-col items-center px-6">
-    <div class="border-tea-dark/10 w-full max-w-2xl rounded-2xl border bg-white/60 p-8 shadow-xl backdrop-blur-lg">
+    <div class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg">
       <h2 class="text-tea-dark mb-6 text-center font-serif text-3xl font-bold">
         Detalhes do evento
       </h2>
 
       <div class="mb-6 grid gap-8 md:grid-cols-2">
-        <div class="rounded-xl bg-white/40 p-4 shadow">
+        <div class="glass hover-scale rounded-xl p-4 shadow">
           <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">
             O que teremos
           </h3>
@@ -149,7 +143,7 @@
           </ul>
         </div>
 
-        <div class="rounded-xl bg-white/40 p-4 shadow">
+        <div class="glass hover-scale rounded-xl p-4 shadow">
           <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">
             Informações Extras
           </h3>
@@ -161,16 +155,6 @@
           </ul>
         </div>
       </div>
-
-      <!-- <div class="rounded-xl bg-white/40 p-4 shadow"> -->
-      <!--   <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold"> -->
-      <!--     Localização -->
-      <!--   </h3> -->
-      <!--   <p class="text-tea-dark/80"> -->
-      <!--     Rua Plínio Salgado, 549 <br /> -->
-      <!--     Bairro Neva <br /> -->
-      <!--   </p> -->
-      <!-- </div> -->
 
       <div class="glass hover-scale rounded-xl p-4 shadow">
         <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">
@@ -194,25 +178,25 @@
           </a>
         </p>
       </div>
-      `
+
       <div class="mt-8">
         <h3 class="text-tea-dark mb-4 text-center font-serif text-xl font-semibold">
           Galeria de Momentos
         </h3>
         <div class="gallery">
-          <div class="gallery-item">
+          <div class="gallery-item glass hover-scale">
             <img src="https://images.unsplash.com/photo-1594631348403-397d73138a3a?w=500&auto=format&fit=crop"
               alt="Teacup and flowers" />
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item glass hover-scale">
             <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=500&auto=format&fit=crop"
               alt="Tea and cookies" />
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item glass hover-scale">
             <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&auto=format&fit=crop"
               alt="Tea pot set" />
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item glass hover-scale">
             <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&auto=format&fit=crop"
               alt="Garden setup" />
           </div>
@@ -223,7 +207,7 @@
 
   <!-- RSVP SECTION -->
   <section id="rsvp" class="my-10 flex w-full flex-col items-center px-6">
-    <div class="border-tea-dark/10 w-full max-w-2xl rounded-2xl border bg-white/60 p-8 shadow-xl backdrop-blur-lg">
+    <div class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg">
       <h2 class="text-tea-dark mb-4 text-center font-serif text-3xl font-bold">
         Confirmar Presença
       </h2>
@@ -235,7 +219,7 @@
         <!-- nome input -->
         <div class="group relative">
           <input type="text" id="name"
-            class="peer border-tea-dark/30 text-tea-dark focus:border-tea-dark w-full rounded-lg border bg-white/70 px-4 py-3 pt-5 transition outline-none"
+            class="peer border-tea-dark/30 text-tea-dark focus:border-tea-dark w-full rounded-lg border glass px-4 py-3 pt-5 transition outline-none"
             placeholder=" " required />
           <label for="name"
             class="text-tea-dark/70 peer-focus:text-tea-dark absolute top-4 left-4 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:left-2 peer-[&:not(:placeholder-shown)]:text-xs">Seu
@@ -245,7 +229,7 @@
         <!-- número de convidados -->
         <div class="group relative">
           <input type="number" id="guests"
-            class="peer border-tea-dark/30 text-tea-dark focus:border-tea-dark w-full rounded-lg border bg-white/70 px-4 py-3 pt-5 transition outline-none"
+            class="peer border-tea-dark/30 text-tea-dark focus:border-tea-dark w-full rounded-lg border glass px-4 py-3 pt-5 transition outline-none"
             min="1" max="4" placeholder=" " required />
           <label for="guests"
             class="text-tea-dark/70 peer-focus:text-tea-dark absolute top-4 left-4 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:left-2 peer-[&:not(:placeholder-shown)]:text-xs">Número
@@ -254,29 +238,45 @@
 
         <!-- submit button -->
         <button type="submit"
-          class="btn-tea bg-tea-dark hover:bg-tea-dark/90 w-full rounded-lg px-6 py-3 font-medium text-white transition-transform hover:scale-[1.02] active:scale-[0.98]">
+          class="btn-glass w-full rounded-lg px-6 py-3 font-medium transition-transform hover:scale-[1.02] active:scale-[0.98]">
           Confirmar Presença
         </button>
       </form>
     </div>
   </section>
 
-  <!-- Adicione isto onde desejar exibir a xícara de chá decorativa -->
-  <div class="teacup-container">
+  <!-- ELEGANT TEACUP DECORATION -->
+  <div class="teacup-container my-16">
     <div class="teacup">
       <div class="tea"></div>
       <div class="handle"></div>
       <div class="saucer"></div>
-      <div class="steam">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="steam-container">
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
+        <div class="steam-particle"></div>
       </div>
     </div>
-  </div>
-
-  <!-- Adicione esta linha antes de fechar a tag </body> -->
-  <script src="src/script.js"></script>
+    <script src="src/script.js"></script>
 </body>
 
 </html>

@@ -205,33 +205,34 @@ textarea:focus {
 /* Estilo de Xícara de Chá Decorativa */
 .teacup-container {
   position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 20px auto;
-  transform: scale(0.8);
+  width: 160px;
+  height: 180px;
+  margin: 40px auto;
+  transform: scale(0.9);
 }
 
 .teacup {
   position: relative;
-  width: 80px;
-  height: 60px;
+  width: 100px;
+  height: 70px;
   background-color: #fff;
-  border-radius: 0 0 40px 40px;
+  border-radius: 0 0 50px 50px;
   border: 3px solid #8c6e4a;
   border-top: none;
   margin: 0 auto;
   z-index: 2;
-  box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  box-shadow: 0 15px 20px -8px rgba(0, 0, 0, 0.3);
+  overflow: visible;
+  /* Changed from hidden to visible */
 }
 
 .teacup:before {
   content: "";
   position: absolute;
   top: 0;
-  left: 5px;
-  right: 5px;
-  height: 12px;
+  left: 8px;
+  right: 8px;
+  height: 15px;
   border-radius: 50%;
   background-color: white;
   z-index: 3;
@@ -239,149 +240,211 @@ textarea:focus {
 
 .tea {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #d4b995;
-  border-radius: 0 0 35px 35px;
-  overflow: hidden;
+  border-radius: 0 0 45px 45px;
 }
 
 .tea:after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 10px;
-  width: 15px;
-  height: 15px;
+  top: 5px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
-  filter: blur(2px);
+  filter: blur(3px);
 }
 
 .handle {
   position: absolute;
-  top: 12px;
-  right: -28px;
-  width: 30px;
-  height: 20px;
+  top: 15px;
+  right: -35px;
+  width: 40px;
+  height: 25px;
   border: 3px solid #8c6e4a;
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 25px 25px 0;
   border-left: none;
   z-index: 1;
 }
 
 .saucer {
   position: absolute;
-  width: 110px;
-  height: 20px;
+  width: 140px;
+  height: 24px;
   background-color: #fff;
   border: 3px solid #8c6e4a;
   border-radius: 50%;
-  bottom: -12px;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.4);
 }
 
-.steam {
+/* Fixed Steam Effect */
+.steam-container {
   position: absolute;
-  top: -15px;
+  top: -30px;
+  left: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 4;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
 }
 
-.steam span {
+.steam-particle {
   position: absolute;
-  bottom: 0;
-  width: 8px;
-  height: 0px;
-  background-color: #ffffff;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
+  animation-name: steam;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
   opacity: 0;
   filter: blur(5px);
-  animation: steam 3s infinite;
 }
 
-.steam span:nth-child(1) {
-  left: 20px;
+.steam-particle:nth-child(1) {
+  left: 30%;
   animation-delay: 0.2s;
 }
 
-.steam span:nth-child(2) {
-  animation-delay: 0.8s;
+.steam-particle:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.6s;
 }
 
-.steam span:nth-child(3) {
-  right: 20px;
+.steam-particle:nth-child(3) {
+  left: 55%;
+  animation-delay: 1s;
+}
+
+.steam-particle:nth-child(4) {
+  left: 70%;
   animation-delay: 0.4s;
 }
 
 @keyframes steam {
   0% {
-    height: 0;
+    transform: translateY(0) scale(0.5);
     opacity: 0;
   }
 
-  30% {
-    height: 20px;
-    opacity: 0.5;
-  }
-
-  90% {
-    height: 45px;
-    opacity: 0;
-  }
-
-  100% {
-    height: 50px;
-    opacity: 0;
-  }
-}
-
-/* Classe para adicionar efeito de oscilação */
-.teacup-container.wobble {
-  animation: wobble 3s infinite;
-}
-
-@keyframes wobble {
-
-  0%,
-  100% {
-    transform: scale(0.8) rotate(0deg);
-  }
-
-  25% {
-    transform: scale(0.8) rotate(-3deg);
-  }
-
-  75% {
-    transform: scale(0.8) rotate(3deg);
-  }
-}
-
-/* Efeito de hover */
-.teacup-container:hover .tea {
-  animation: ripple 1s ease-in-out;
-}
-
-@keyframes ripple {
-  0% {
-    transform: translateY(0);
+  15% {
+    opacity: 0.8;
   }
 
   50% {
-    transform: translateY(3px);
+
+    /* Fixed Steam Effect - More Condensed Version */
+    .steam-container {
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .steam-particle {
+      position: absolute;
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      animation-name: steam;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      opacity: 0;
+      filter: blur(7px);
+    }
+
+    .steam-particle:nth-child(1) {
+      left: 35%;
+      animation-delay: 0.2s;
+    }
+
+    .steam-particle:nth-child(2) {
+      left: 40%;
+      animation-delay: 0.6s;
+    }
+
+    .steam-particle:nth-child(3) {
+      left: 50%;
+      animation-delay: 1s;
+    }
+
+    .steam-particle:nth-child(4) {
+      left: 60%;
+      animation-delay: 0.4s;
+    }
+
+    @keyframes steam {
+      0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.9;
+      }
+
+      50% {
+        transform: translateY(-15px) scale(1.2);
+        opacity: 0.7;
+      }
+
+      75% {
+        opacity: 0.5;
+      }
+
+      95% {
+        transform: translateY(-30px) scale(1.5);
+        opacity: 0.1;
+      }
+
+      100% {
+        transform: translateY(-35px) scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translateY(-15px) scale(1.2);
+    opacity: 0.7;
+  }
+
+  75% {
+    opacity: 0.5;
+  }
+
+  95% {
+    transform: translateY(-30px) scale(1.5);
+    opacity: 0.1;
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateY(-35px) scale(1.6);
+    opacity: 0;
   }
 }
+
 
 /* Glassmorphism styles */
 .glass {
@@ -390,6 +453,75 @@ textarea:focus {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(140, 110, 74, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px 0 rgba(140, 110, 74, 0.2);
+}
+
+/* Improved animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Interactive elements */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Enhanced button styles */
+.btn-glass {
+  background: rgba(140, 110, 74, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-glass:hover {
+  background: rgba(140, 110, 74, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.18);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 .glass-card {

@@ -89,20 +89,71 @@ body::before {
 /* Floating teapot animation */
 @keyframes float {
   0% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) rotate(0deg) scale(1);
+    filter: drop-shadow(0 5px 15px rgba(140, 110, 74, 0.2));
   }
-
+  25% {
+    transform: translateY(-8px) rotate(3deg) scale(1.02);
+    filter: drop-shadow(0 8px 20px rgba(140, 110, 74, 0.3));
+  }
   50% {
-    transform: translateY(-10px) rotate(5deg);
+    transform: translateY(-15px) rotate(5deg) scale(1.05);
+    filter: drop-shadow(0 12px 25px rgba(140, 110, 74, 0.4));
   }
-
+  75% {
+    transform: translateY(-8px) rotate(3deg) scale(1.02);
+    filter: drop-shadow(0 8px 20px rgba(140, 110, 74, 0.3));
+  }
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) rotate(0deg) scale(1);
+    filter: drop-shadow(0 5px 15px rgba(140, 110, 74, 0.2));
   }
 }
 
 .floating-teapot {
   animation: float 6s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Shooting star animation */
+@keyframes shooting {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    transform: translateX(-15px) translateY(15px) rotate(-15deg) scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-30px) translateY(30px) rotate(-25deg) scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+  }
+  85% {
+    transform: translateX(-45px) translateY(45px) rotate(-35deg) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-60px) translateY(60px) rotate(-45deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  animation: shooting 3s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.shooting-star img {
+  transition: filter 0.3s ease;
+}
+
+.shooting-star:hover img {
+  filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
 }
 
 /* Form input focus effects */
@@ -475,80 +526,9 @@ textarea:focus {
   0% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(1.05);
   }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.animate-pulse {
-  animation: pulse 2s infinite;
-}
-
-/* Interactive elements */
-.hover-scale {
-  transition: transform 0.3s ease;
-}
-
-.hover-scale:hover {
-  transform: scale(1.03);
-}
-
-/* Enhanced button styles */
-.btn-glass {
-  background: rgba(140, 110, 74, 0.7);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.btn-glass:hover {
-  background: rgba(140, 110, 74, 0.9);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px);
-border: 1px solid rgba(255, 255, 255, 0.18);
-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(140, 110, 74, 0.15);
-  transition: all 0.3s ease;
-}
-
-.glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px 0 rgba(140, 110, 74, 0.2);
-}
-
-/* Improved animations */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.05);
-  }
-
   100% {
     transform: scale(1);
   }

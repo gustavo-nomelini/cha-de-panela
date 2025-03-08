@@ -56,33 +56,39 @@
 
       <!-- Tea cup - right teacup  -->
       <div class="block">
-        <div class="tea-cup animate-pulse"></div>
+        <a href="#timer" class="block cursor-pointer">
+          <div class="tea-cup animate-pulse"></div>
+        </a>
       </div>
     </div>
   </header>
 
   <!-- COUNTDOWN TIMER SECTION -->
-  <section class="flex w-full justify-center px-6 py-4">
+  <section id="timer" class="flex w-full justify-center px-6 py-4">
     <div class="glass-card w-full max-w-2xl rounded-2xl border p-6 shadow-lg backdrop-blur-sm bg-white/30 border-white">
       <h2 class="text-tea-dark mb-3 text-center font-serif text-2xl font-bold">
         Save the Date
       </h2>
-      <div id="countdown" class="flex flex-wrap justify-center gap-3 sm:gap-6">
-        <div class="flex min-w-[80px] flex-col items-center rounded-lg bg-white/70 px-4 py-2 shadow">
-          <span id="days" class="text-tea-dark font-serif text-2xl sm:text-3xl">00</span>
-          <span class="text-tea-dark/70 text-xs uppercase">Dias</span>
+      <div id="countdown" class="flex flex-col gap-4">
+        <div class="flex justify-center gap-6">
+          <div class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow">
+            <span id="days" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
+            <span class="text-tea-dark/70 text-sm uppercase">Dias</span>
+          </div>
+          <div class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow">
+            <span id="hours" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
+            <span class="text-tea-dark/70 text-sm uppercase">Horas</span>
+          </div>
         </div>
-        <div class="flex min-w-[80px] flex-col items-center rounded-lg bg-white/70 px-4 py-2 shadow">
-          <span id="hours" class="text-tea-dark font-serif text-2xl sm:text-3xl">00</span>
-          <span class="text-tea-dark/70 text-xs uppercase">Horas</span>
-        </div>
-        <div class="flex min-w-[80px] flex-col items-center rounded-lg bg-white/70 px-4 py-2 shadow">
-          <span id="minutes" class="text-tea-dark font-serif text-2xl sm:text-3xl">00</span>
-          <span class="text-tea-dark/70 text-xs uppercase">Minutos</span>
-        </div>
-        <div class="flex min-w-[80px] flex-col items-center rounded-lg bg-white/70 px-4 py-2 shadow">
-          <span id="seconds" class="text-tea-dark font-serif text-2xl sm:text-3xl">00</span>
-          <span class="text-tea-dark/70 text-xs uppercase">Segundos</span>
+        <div class="flex justify-center gap-6">
+          <div class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow">
+            <span id="minutes" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
+            <span class="text-tea-dark/70 text-sm uppercase">Minutos</span>
+          </div>
+          <div class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow">
+            <span id="seconds" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
+            <span class="text-tea-dark/70 text-sm uppercase">Segundos</span>
+          </div>
         </div>
       </div>
     </div>
@@ -106,8 +112,8 @@
             </h1>
           </div>
           <p class="text-tea-dark mt-4 mb-6 text-center text-xl italic max-w-2xl">
-            Junte-se a nós em uma tarde para nosso chá de panela
-            para celebrar nosso lar e nossa união
+            Junte-se conosco em uma tarde comemorativa 
+            para celebrar nosso lar, nossa união e amor
           </p>
         </div>
       </div>

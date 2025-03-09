@@ -16,6 +16,170 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Carousel functionality - improved version
+  initCarousel();
+
+  function initCarousel() {
+    const carouselContainer = document.getElementById("carousel-slides");
+    const indicators = document.querySelectorAll(".carousel-indicator");
+    
+    // Check if carousel elements exist before initializing
+    if (!carouselContainer || indicators.length === 0) {
+      console.warn("Carousel elements not found");
+      return;
+    }
+    
+    let currentSlide = 0;
+    let autoSlideInterval;
+    let isTransitioning = false;
+    
+    // Detect if user is on mobile
+    const isMobile = window.innerWidth <= 768;
+    
+    // Adjust timings based on device
+    const transitionDuration = isMobile ? 800 : 800; // milliseconds
+    const slideInterval = isMobile ? 8000 : 6000; // milliseconds
+    
+    // Function to show specific slide with smoother transition
+    function showSlide(index) {
+      if (isTransitioning) return; // Prevent rapid transitions
+      isTransitioning = true;
+      
+      // Update slides position
+      carouselContainer.style.transform = `translateX(-${index * 16.666}%)`;
+      
+      // Update indicators
+      indicators.forEach(dot => dot.classList.remove('active'));
+      indicators[index].classList.add('active');
+      
+      // Update current slide index
+      currentSlide = index;
+      
+      // Reset transition flag after animation completes
+      setTimeout(() => {
+        isTransitioning = false;
+      }, transitionDuration);
+    }
+
+    // Initialize carousel and set first slide as active
+    showSlide(0);
+
+    // Add click event to each indicator with debounce
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', function() {
+        if (isTransitioning) return;
+        
+        const slideIndex = parseInt(this.getAttribute('data-index'));
+        showSlide(slideIndex);
+        resetAutoSlide();
+      });
+    });
+
+    // Add touch swipe capability
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    const carousel = document.querySelector('.carousel');
+    
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (isTransitioning) return;
+      
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left - next slide
+        const nextSlide = (currentSlide + 1) % indicators.length;
+        showSlide(nextSlide);
+        resetAutoSlide();
+      }
+      
+      if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right - previous slide
+        const prevSlide = (currentSlide - 1 + indicators.length) % indicators.length;
+        showSlide(prevSlide);
+        resetAutoSlide();
+      }
+    }
+
+    // Auto slide functionality with improved timing
+    function startAutoSlide() {
+      // Clear any existing interval first to prevent multiple intervals
+      clearInterval(autoSlideInterval);
+      
+      autoSlideInterval = setInterval(() => {
+        if (!document.hidden) {  // Only advance slides if page is visible
+          const nextSlide = (currentSlide + 1) % indicators.length;
+          showSlide(nextSlide);
+        }
+      }, slideInterval);
+      
+      console.log("Auto slide started"); // Debug message
+    }
+
+    // Reset auto slide timer when manually changing slides
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    // Start auto sliding immediately
+    startAutoSlide();
+
+    // Pause auto slide when hovering over carousel
+    carousel.addEventListener('mouseenter', () => {
+      clearInterval(autoSlideInterval);
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+      startAutoSlide();
+    });
+    
+    // Handle visibility change
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        clearInterval(autoSlideInterval);
+      } else {
+        startAutoSlide();
+      }
+    });
+    
+    // Prevent rapid sliding with keyboard navigation
+    carousel.setAttribute('tabindex', '0');
+    carousel.addEventListener('keydown', (e) => {
+      if (isTransitioning) return;
+      
+      if (e.key === 'ArrowRight') {
+        const nextSlide = (currentSlide + 1) % indicators.length;
+        showSlide(nextSlide);
+        resetAutoSlide();
+      }
+      
+      if (e.key === 'ArrowLeft') {
+        const prevSlide = (currentSlide - 1 + indicators.length) % indicators.length;
+        showSlide(prevSlide);
+        resetAutoSlide();
+      }
+    });
+    
+    // Handle window resize to adjust carousel behavior
+    window.addEventListener('resize', () => {
+      const newIsMobile = window.innerWidth <= 768;
+      if (newIsMobile !== isMobile) {
+        // Restart carousel if device type changed
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+      }
+    });
+  }
+
   // Form handling com integração Google Forms
   const form = document.getElementById("rsvp-form");
   if (form) {

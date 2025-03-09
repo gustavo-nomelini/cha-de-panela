@@ -355,4 +355,50 @@ document.addEventListener("DOMContentLoaded", function () {
     section.classList.add("opacity-0", "transition-opacity", "duration-1000");
     observer.observe(section);
   });
+
+  // Copy PIX key functionality
+  const copyPixKeyButton = document.getElementById('copy-pix-key');
+  if (copyPixKeyButton) {
+    copyPixKeyButton.addEventListener('click', function() {
+      const pixKey = "00020126590014br.gov.bcb.pix0111327500098550222Cha de Panela Gus&Jess5204000053039865802BR5922GUSTAVO LOPES NOMELINI6008CASCAVEL62150511ChaDePanela6304E6A1";
+      
+      // Use the Clipboard API to copy the text
+      navigator.clipboard.writeText(pixKey).then(function() {
+        // Show confirmation
+        const confirmationElement = document.getElementById('copy-confirmation');
+        if (confirmationElement) {
+          confirmationElement.style.opacity = '1';
+          
+          // Hide confirmation after 3 seconds
+          setTimeout(function() {
+            confirmationElement.style.opacity = '0';
+          }, 3000);
+        }
+      }).catch(function(err) {
+        // Fallback for browsers that don't support Clipboard API
+        const textArea = document.createElement('textarea');
+        textArea.value = pixKey;
+        textArea.style.position = 'fixed';  // Avoid scrolling to bottom
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+          document.execCommand('copy');
+          const confirmationElement = document.getElementById('copy-confirmation');
+          if (confirmationElement) {
+            confirmationElement.style.opacity = '1';
+            
+            setTimeout(function() {
+              confirmationElement.style.opacity = '0';
+            }, 3000);
+          }
+        } catch (err) {
+          console.error('Failed to copy PIX key:', err);
+        }
+        
+        document.body.removeChild(textArea);
+      });
+    });
+  }
 });

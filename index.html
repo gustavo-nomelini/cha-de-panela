@@ -292,19 +292,25 @@
           Para tornar nossa celebração ainda mais especial, aceitamos contribuições para ajudar na realização do evento.
         </p>
         <p class="mb-4">
-          Sua presença é o mais importante para nós, mas qualquer ajuda é muito bem-vinda e será recebida com gratidão.
+          Sua presença é o mais importante para nós,<br>mas pedimos uma <b>contribuição mínima de R$50</b><br> que será muito bem-vinda e recebida com gratidão.
         </p>
         <p class="italic">
-          Escaneie o QR code abaixo para realizar sua contribuição via PIX.
+          Escaneie o QR code ou copie a chave no botão abaixo<br> para realizar sua contribuição via PIX.
         </p>
       </div>
       
       <div class="flex justify-center">
         <div class="glass p-4 rounded-xl shadow transition-all duration-300 hover:shadow-md">
-          <img src="img/qrcode.png" alt="QR Code para doação via PIX" class="w-48 h-48 mx-auto" />
-          <p class="text-center text-tea-dark/80 mt-2 text-sm">
-            Ou use a chave PIX: <span class="font-semibold">12345678900</span>
-          </p>
+          <img src="img/qrcode.jpeg" alt="QR Code para doação via PIX" class="w-48 h-48 mx-auto" />
+          <div class="text-center text-tea-dark/80 mt-2">
+            <button 
+              id="copy-pix-key" 
+              class="text-sm text-tea-dark underline cursor-pointer hover:text-tea-dark/70 transition-colors"
+              aria-label="Clique para copiar a chave PIX">
+              Clique aqui para copiar a chave
+            </button>
+            <p class="text-xs mt-1 opacity-0 transition-opacity duration-300" id="copy-confirmation">Chave copiada com sucesso!</p>
+          </div>
         </div>
       </div>
     </div>

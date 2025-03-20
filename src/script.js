@@ -1,4 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Add meta description and title dynamically based on viewport
+  if (window.innerWidth <= 768) {
+    document.querySelector('meta[name="description"]').setAttribute('content', 
+      'Chá de Panela de Gus & Jess (Mobile) - Evento em 19/04/2025. Confirme sua presença!');
+  }
+  
+  // Check for support of the Performance API and send metrics
+  if ('performance' in window && 'PerformanceObserver' in window) {
+    // Create performance observer to track page load metrics
+    const observer = new PerformanceObserver((list) => {
+      list.getEntries().forEach((entry) => {
+        // Log or send these metrics to your analytics
+        console.log(`${entry.name}: ${entry.startTime.toFixed(0)}ms`);
+      });
+    });
+    
+    // Observe different performance metrics
+    observer.observe({entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift']});
+  }
+
+  // Check and apply CORS headers dynamically if needed
+  function applyCorsIfNeeded() {
+    const originUrl = window.location.origin;
+    
+    // Only apply CORS for cross-domain requests
+    if (document.domain !== window.location.hostname) {
+      console.log("Cross-domain detected, CORS headers should be properly set on the server");
+    }
+  }
+  applyCorsIfNeeded();
+  
   // Smooth scrolling for navigation links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -198,6 +229,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
+      // Add CORS headers to the form submission
+      const headers = new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Access-Control-Allow-Origin': '*'
+      });
+
       // Mostrar feedback para o usuário
       showNotification(`Processando sua confirmação, ${name}...`, "info");
 
@@ -208,50 +245,74 @@ document.addEventListener("DOMContentLoaded", function () {
       const nameFieldId = "494432199";
       const guestsFieldId = "1498135098";
 
-      // Criar um formulário dinâmico e enviá-lo diretamente
-      const dynamicForm = document.createElement("form");
-      dynamicForm.action = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
-      dynamicForm.method = "POST";
-      dynamicForm.target = "_blank"; // Envia para uma nova guia (que pode ser fechada automaticamente)
-      dynamicForm.style.display = "none";
-
-      // Criar campos para os dados
-      const nameInput = document.createElement("input");
-      nameInput.type = "text";
-      nameInput.name = `entry.${nameFieldId}`;
-      nameInput.value = name;
-      dynamicForm.appendChild(nameInput);
-
-      const guestsInput = document.createElement("input");
-      guestsInput.type = "text";
-      guestsInput.name = `entry.${guestsFieldId}`;
-      guestsInput.value = guests;
-      dynamicForm.appendChild(guestsInput);
-
-      // Adicionar ao documento e enviar
-      document.body.appendChild(dynamicForm);
-
-      // Criar iframe para capturar o resultado
-      const resultFrame = document.createElement("iframe");
-      resultFrame.name = "_blank";
-      resultFrame.style.display = "none";
-      document.body.appendChild(resultFrame);
-
-      // Enviar o formulário
-      dynamicForm.submit();
-
-      // Remover o formulário e o iframe após o envio
-      setTimeout(() => {
-        document.body.removeChild(dynamicForm);
-        document.body.removeChild(resultFrame);
-
-        // Mostrar mensagem de confirmação
+      // Try fetch API first (with CORS support) before falling back to the iframe method
+      const formData = new URLSearchParams();
+      formData.append(`entry.${nameFieldId}`, name);
+      formData.append(`entry.${guestsFieldId}`, guests);
+      
+      // Try the fetch method with proper CORS headers
+      fetch(`https://docs.google.com/forms/d/e/${formId}/formResponse`, {
+        method: 'POST',
+        mode: 'no-cors', // This is important for Google Forms
+        headers: headers,
+        body: formData,
+      })
+      .then(() => {
         showNotification(
           `Obrigado, ${name}! Sua presença foi confirmada com ${guests} acompanhante(s).`,
-          "success",
+          "success"
         );
         form.reset();
-      }, 2000);
+      })
+      .catch(error => {
+        console.log("Fetch failed, falling back to form submission method", error);
+        
+        // Fallback to the iframe method
+        // Criar um formulário dinâmico e enviá-lo diretamente
+        const dynamicForm = document.createElement("form");
+        dynamicForm.action = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+        dynamicForm.method = "POST";
+        dynamicForm.target = "_blank"; 
+        dynamicForm.style.display = "none";
+
+        // Criar campos para os dados
+        const nameInput = document.createElement("input");
+        nameInput.type = "text";
+        nameInput.name = `entry.${nameFieldId}`;
+        nameInput.value = name;
+        dynamicForm.appendChild(nameInput);
+
+        const guestsInput = document.createElement("input");
+        guestsInput.type = "text";
+        guestsInput.name = `entry.${guestsFieldId}`;
+        guestsInput.value = guests;
+        dynamicForm.appendChild(guestsInput);
+
+        // Adicionar ao documento e enviar
+        document.body.appendChild(dynamicForm);
+
+        // Criar iframe para capturar o resultado
+        const resultFrame = document.createElement("iframe");
+        resultFrame.name = "_blank";
+        resultFrame.style.display = "none";
+        document.body.appendChild(resultFrame);
+
+        // Enviar o formulário
+        dynamicForm.submit();
+
+        // Remover o formulário e o iframe após o envio
+        setTimeout(() => {
+          document.body.removeChild(dynamicForm);
+          document.body.removeChild(resultFrame);
+
+          // Mostrar mensagem de confirmação
+          showNotification(
+            `Obrigado, ${name}! Sua presença foi confirmada com ${guests} acompanhante(s).`,
+            "success",
+          );
+          form.reset();
+        }, 2000);
+      });
     });
   }
 
@@ -335,6 +396,33 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update countdown every second
   setInterval(updateCountdown, 1000);
 
+  // Add SEO-friendly image alt text to all images dynamically
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.alt || img.alt === '') {
+      // Get image filename as fallback alt text
+      const imgSrc = img.src;
+      const imgName = imgSrc.substring(imgSrc.lastIndexOf('/') + 1, imgSrc.lastIndexOf('.'));
+      img.alt = `Imagem: ${imgName.replace(/-/g, ' ')}`;
+    }
+    
+    // Add lazy loading if not already present
+    if (!img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+    
+    // Add width and height if missing (helps with CLS)
+    if (!img.hasAttribute('width') && !img.hasAttribute('height')) {
+      img.addEventListener('load', function() {
+        if (!this.hasAttribute('width')) {
+          this.setAttribute('width', this.naturalWidth);
+        }
+        if (!this.hasAttribute('height')) {
+          this.setAttribute('height', this.naturalHeight);
+        }
+      });
+    }
+  });
+
   // Add animation to elements when they come into view
   const observer = new IntersectionObserver(
     (entries) => {
@@ -401,4 +489,41 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+});
+
+// Add schema.org metadata for better search results
+function addSchemaMetadata() {
+  if (!document.querySelector('script[type="application/ld+json"]')) {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Gus & Jess Chá de Panela",
+      "startDate": "2025-04-19T15:00",
+      "endDate": "2025-04-20T00:00",
+      "location": {
+        "@type": "Place",
+        "name": "Residência",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Plínio Salgado, 549",
+          "addressLocality": "Cascavel",
+          "addressRegion": "PR",
+          "postalCode": "",
+          "addressCountry": "BR"
+        }
+      },
+      "image": "img/tea-pot-svgrepo-com.svg",
+      "description": "Junte-se conosco em uma tarde comemorativa para celebrar nosso lar, nossa união e amor"
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }
+}
+
+// Execute after a small delay to ensure page is fully loaded
+window.addEventListener('load', function() {
+  setTimeout(addSchemaMetadata, 100);
 });

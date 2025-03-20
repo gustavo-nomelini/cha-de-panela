@@ -1,407 +1,602 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="description"
+      content="Chá de Panela de Gus & Jess - Junte-se a nós em 19 de Abril de 2025 para celebrar nosso lar, união e amor."
+    />
+    <meta name="theme-color" content="#f3e8d6" />
+    <meta name="author" content="Gustavo Lopes Nomelini" />
+    <meta
+      name="keywords"
+      content="chá de panela, Gus e Jess, eventos, casamento, celebração, convite digital"
+    />
+    <meta name="robots" content="index, follow" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Chá de Panela de Gus & Jess - Junte-se a nós em 19 de Abril de 2025 para celebrar nosso lar, união e amor." />
-  <meta name="theme-color" content="#f3e8d6" />
-  <title>Gus & Jess - Chá de Panela</title>
-  <link rel="icon" type="image/svg" href="img/tea-pot-svgrepo-com.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet" />
-  <link href="src/styles.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            tea: {
-              light: "#f3e8d6",
-              medium: "#d4b995",
-              dark: "#8c6e4a",
+    <!-- Canonical URL to prevent duplicate content issues -->
+    <link rel="canonical" href="https://seudominioaqui.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seudominioaqui.com/" />
+    <meta property="og:title" content="Gus & Jess - Chá de Panela" />
+    <meta
+      property="og:description"
+      content="Junte-se a nós em 19 de Abril de 2025 para celebrar nosso lar, união e amor."
+    />
+    <meta property="og:image" content="https://seudominioaqui.com/img/og-image.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://seudominioaqui.com/" />
+    <meta property="twitter:title" content="Gus & Jess - Chá de Panela" />
+    <meta
+      property="twitter:description"
+      content="Junte-se a nós em 19 de Abril de 2025 para celebrar nosso lar, união e amor."
+    />
+    <meta property="twitter:image" content="https://seudominioaqui.com/img/og-image.jpg" />
+
+    <!-- CORS - Allow resources to be accessed from any domain -->
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+
+    <title>Gus & Jess - Chá de Panela</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="src/styles.css" as="style" />
+    <link rel="preload" href="src/script.js" as="script" />
+    <link rel="preload" href="img/tea-pot-svgrepo-com.svg" as="image" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="icon" type="image/svg" href="img/tea-pot-svgrepo-com.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/styles.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              tea: {
+                light: '#f3e8d6',
+                medium: '#d4b995',
+                dark: '#8c6e4a',
+              },
+            },
+            fontFamily: {
+              serif: ['Playfair Display', 'serif'],
+              sans: ['Poppins', 'sans-serif'],
             },
           },
-          fontFamily: {
-            serif: ["Playfair Display", "serif"],
-            sans: ["Poppins", "sans-serif"],
-          },
         },
-      },
-    };
-  </script>
-  <!-- Structured data for better SEO -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Gus & Jess Chá de Panela",
-      "startDate": "2025-04-19T15:00",
-      "endDate": "2025-04-20T00:00",
-      "location": {
-        "@type": "Place",
-        "name": "Residência",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Rua Plínio Salgado, 549",
-          "addressLocality": "Cascavel",
-          "addressRegion": "PR",
-          "postalCode": "",
-          "addressCountry": "BR"
+      };
+    </script>
+    <!-- Structured data for better SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Gus & Jess Chá de Panela",
+        "startDate": "2025-04-19T15:00",
+        "endDate": "2025-04-20T00:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Residência",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Plínio Salgado, 549",
+            "addressLocality": "Cascavel",
+            "addressRegion": "PR",
+            "postalCode": "",
+            "addressCountry": "BR"
+          }
+        },
+        "image": [
+          "https://seudominioaqui.com/img/tea-pot-svgrepo-com.svg",
+          "https://seudominioaqui.com/img/gj1.JPG"
+        ],
+        "description": "Junte-se conosco em uma tarde comemorativa para celebrar nosso lar, nossa união e amor",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://seudominioaqui.com/#rsvp",
+          "price": "0",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01T00:00"
+        },
+        "organizer": {
+          "@type": "Person",
+          "name": "Gus & Jess"
         }
-      },
-      "image": "img/tea-pot-svgrepo-com.svg",
-      "description": "Junte-se conosco em uma tarde comemorativa para celebrar nosso lar, nossa união e amor"
-    }
-  </script>
-</head>
+      }
+    </script>
+  </head>
 
-<body class="from-tea-light to-tea-medium bg-gradient-to-b font-sans">
-  <!-- HEADER SECTION -->
-  <header id="header" class="glass sticky top-0 z-50 w-full border-b text-xl shadow-md backdrop-blur-md">
-    <div class="container mx-auto flex justify-between p-4 relative">
-      <!-- Navigation links - aligned left on mobile -->
-      <nav class="flex" aria-label="Navegação principal">
-        <ul class="flex space-x-4 md:space-x-14">
-          <li>
-            <a href="#home"
-              class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
-              aria-label="Ir para Home">Home</a>
-          </li>
-          <li>
-            <a href="#details"
-              class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
-              aria-label="Ir para Sobre">Sobre</a>
-          </li>
-          <li>
-            <a href="#rsvp"
-              class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
-              aria-label="Ir para Forms">Forms</a>
-          </li>
-        </ul>
-      </nav>
+  <body class="from-tea-light to-tea-medium bg-gradient-to-b font-sans">
+    <!-- HEADER SECTION -->
+    <header
+      id="header"
+      class="glass sticky top-0 z-50 w-full border-b text-xl shadow-md backdrop-blur-md"
+    >
+      <div class="container mx-auto flex justify-between p-4 relative">
+        <!-- Navigation links - aligned left on mobile -->
+        <nav class="flex" aria-label="Navegação principal">
+          <ul class="flex space-x-4 md:space-x-14">
+            <li>
+              <a
+                href="#home"
+                class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
+                aria-label="Ir para Home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#details"
+                class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
+                aria-label="Ir para Sobre"
+                >Sobre</a
+              >
+            </li>
+            <li>
+              <a
+                href="#rsvp"
+                class="text-tea-dark hover:text-tea-dark/80 after:bg-tea-dark relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
+                aria-label="Ir para Forms"
+                >Forms</a
+              >
+            </li>
+          </ul>
+        </nav>
 
-      <!-- Tea cup - right teacup  -->
-      <div class="block">
-        <a href="#timer" class="block cursor-pointer" aria-label="Ir para contador">
-          <div class="tea-cup animate-pulse"></div>
-        </a>
+        <!-- Tea cup - right teacup  -->
+        <div class="block">
+          <a href="#timer" class="block cursor-pointer" aria-label="Ir para contador">
+            <div class="tea-cup animate-pulse"></div>
+          </a>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- COUNTDOWN TIMER SECTION -->
-  <section id="timer" class="flex w-full justify-center px-6 py-4">
-    <div class="glass-card w-full max-w-2xl rounded-2xl border p-6 shadow-lg backdrop-blur-sm bg-white/30 border-white">
-      <h2 class="text-tea-dark mb-3 text-center font-serif text-2xl font-bold">
-        Save the Date
-      </h2>
-      <div id="countdown" class="flex flex-col gap-4">
-        <div class="flex justify-center gap-6">
-          <div class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow">
-            <span id="days" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
-            <span class="text-tea-dark/70 text-sm uppercase">Dias</span>
-          </div>
-          <div class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow">
-            <span id="hours" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
-            <span class="text-tea-dark/70 text-sm uppercase">Horas</span>
-          </div>
-        </div>
-        <div class="flex justify-center gap-6">
-          <div class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow">
-            <span id="minutes" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
-            <span class="text-tea-dark/70 text-sm uppercase">Minutos</span>
-          </div>
-          <div class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow">
-            <span id="seconds" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
-            <span class="text-tea-dark/70 text-sm uppercase">Segundos</span>
-          </div>
-        </div>
-        <p class="text-center text-tea-dark mt-4 text-sm italic">Domingo, 19 de Abril de 2025</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOME SECTION -->
-  <section id="home" class="my-4 flex w-full flex-col items-center px-6">
-    <div class="glass-card w-full max-w-2xl p-8 transition-all duration-300 bg-white/30 border-white">
-      <div class="flex flex-col items-center">
-        <div class="flex justify-center mb-4">
-          <img src="img/tea-pot-svgrepo-com.svg" alt="Tea pot icon" class="h-20 w-20 floating-teapot" loading="lazy" />
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="flex items-center gap-4">
-            <div class="shooting-star">
-              <img src="img/star-fall-svgrepo-com.svg" alt="shooting-star" class="h-16" loading="lazy" />
+    <!-- COUNTDOWN TIMER SECTION -->
+    <section id="timer" class="flex w-full justify-center px-6 py-4">
+      <div
+        class="glass-card w-full max-w-2xl rounded-2xl border p-6 shadow-lg backdrop-blur-sm bg-white/30 border-white"
+      >
+        <h2 class="text-tea-dark mb-3 text-center font-serif text-2xl font-bold">Save the Date</h2>
+        <div id="countdown" class="flex flex-col gap-4">
+          <div class="flex justify-center gap-6">
+            <div
+              class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow"
+            >
+              <span id="days" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
+              <span class="text-tea-dark/70 text-sm uppercase">Dias</span>
             </div>
-            <h1 class="text-tea-dark font-serif text-4xl font-bold">
-              Gus & Jess <br />
-              Chá de Panela
-            </h1>
+            <div
+              class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow"
+            >
+              <span id="hours" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
+              <span class="text-tea-dark/70 text-sm uppercase">Horas</span>
+            </div>
           </div>
-          <p class="text-tea-dark mt-4 mb-6 text-center text-xl italic max-w-2xl">
-            Junte-se conosco em uma tarde comemorativa 
-            para celebrar nosso lar, nossa união e amor
+          <div class="flex justify-center gap-6">
+            <div
+              class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow"
+            >
+              <span id="minutes" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
+              <span class="text-tea-dark/70 text-sm uppercase">Minutos</span>
+            </div>
+            <div
+              class="flex min-w-[120px] flex-col items-center rounded-lg bg-white/70 px-4 py-3 shadow"
+            >
+              <span id="seconds" class="text-tea-dark font-serif text-3xl sm:text-4xl">00</span>
+              <span class="text-tea-dark/70 text-sm uppercase">Segundos</span>
+            </div>
+          </div>
+          <p class="text-center text-tea-dark mt-4 text-sm italic">Domingo, 19 de Abril de 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="my-4 flex w-full flex-col items-center px-6">
+      <div
+        class="glass-card w-full max-w-2xl p-8 transition-all duration-300 bg-white/30 border-white"
+      >
+        <div class="flex flex-col items-center">
+          <div class="flex justify-center mb-4">
+            <img
+              src="img/tea-pot-svgrepo-com.svg"
+              alt="Tea pot icon"
+              class="h-20 w-20 floating-teapot"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="flex items-center gap-4">
+              <div class="shooting-star">
+                <img
+                  src="img/star-fall-svgrepo-com.svg"
+                  alt="shooting-star"
+                  class="h-16"
+                  loading="lazy"
+                />
+              </div>
+              <h1 class="text-tea-dark font-serif text-4xl font-bold">
+                Gus & Jess <br />
+                Chá de Panela
+              </h1>
+            </div>
+            <p class="text-tea-dark mt-4 mb-6 text-center text-xl italic max-w-2xl">
+              Junte-se conosco em uma tarde comemorativa para celebrar nosso lar, nossa união e amor
+            </p>
+          </div>
+        </div>
+        <div class="mb-4 flex flex-wrap justify-center gap-8 text-center">
+          <div class="flex flex-col items-center">
+            <span class="text-tea-dark/80 text-sm uppercase">Data</span>
+            <span class="text-tea-dark font-serif text-xl">19 de Abril, 2025</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-tea-dark/80 text-sm uppercase">Horário</span>
+            <span class="text-tea-dark font-serif text-xl">15:00 - 00:00</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-tea-dark/80 text-sm uppercase">Localização</span>
+            <span class="text-tea-dark font-serif text-xl">Rua Plínio Salgado, 549</span>
+          </div>
+        </div>
+        <div class="text-center">
+          <a
+            href="#rsvp"
+            class="btn-tea btn-glass inline-block rounded-full px-8 py-3 font-medium text-white transition-all"
+          >
+            Confirmar Presença
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS SECTION -->
+    <section id="details" class="my-10 flex w-full flex-col items-center px-6">
+      <div
+        class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg bg-white/30 border-white"
+      >
+        <h2 class="text-tea-dark mb-6 text-center font-serif text-3xl font-bold">
+          Detalhes do evento
+        </h2>
+
+        <div class="mb-6 grid gap-8 md:grid-cols-2">
+          <div class="glass hover-scale rounded-xl p-4 shadow">
+            <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">O que teremos</h3>
+            <ul class="text-tea-dark/80 ml-5 list-disc space-y-2">
+              <li>Chá e Café</li>
+              <li>Outras bebidas</li>
+              <li>Chopp</li>
+              <li>Cachorro Quente</li>
+              <li>Momentos para fotos</li>
+              <li>Brincadeiras e sorteios</li>
+              <li>Lembrancinhas</li>
+            </ul>
+          </div>
+
+          <div class="glass hover-scale rounded-xl p-4 shadow">
+            <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">Informações Extras</h3>
+            <ul class="text-tea-dark/80 ml-5 list-disc space-y-2">
+              <li>Clima permitindo, estaremos no jardim</li>
+              <li>Sinta-se à vontade para trazer bebidas e sobremesas</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass hover-scale rounded-xl p-4 shadow">
+          <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">Localização</h3>
+          <p class="text-tea-dark/80">
+            <a
+              href="https://maps.google.com/?q=Rua+Plínio+Salgado,+549,+Bairro+Neva,+Cascavel"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:bg-white/40 group flex flex-col items-start rounded-lg p-2 transition-all duration-300"
+            >
+              <span class="text-tea-dark">Rua Plínio Salgado, 549</span>
+              <span class="text-tea-dark">Bairro Neva</span>
+              <span class="text-tea-dark/60 mt-2 flex items-center text-xs">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="mr-1 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                Ver no Google Maps
+              </span>
+            </a>
           </p>
         </div>
+
+        <!-- Gallery section removed as it's no longer needed -->
       </div>
-      <div class="mb-4 flex flex-wrap justify-center gap-8 text-center">
-        <div class="flex flex-col items-center">
-          <span class="text-tea-dark/80 text-sm uppercase">Data</span>
-          <span class="text-tea-dark font-serif text-xl">19 de Abril, 2025</span>
+    </section>
+
+    <!-- CAROUSEL SECTION -->
+    <section id="carousel-section" class="my-10 flex w-full flex-col items-center px-6">
+      <div
+        class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg bg-white/30 border-white"
+      >
+        <h2 class="text-tea-dark mb-6 text-center font-serif text-3xl font-bold">
+          Nossos Momentos
+        </h2>
+
+        <div class="carousel-card">
+          <div class="carousel">
+            <div class="carousel-container" id="carousel-slides">
+              <div class="carousel-slide adjust-lower">
+                <img src="img/gj1.JPG" alt="Gus e Jess - Momento 1" />
+              </div>
+              <div class="carousel-slide adjust-lower">
+                <img src="img/gj2.JPG" alt="Gus e Jess - Momento 2" />
+              </div>
+              <div class="carousel-slide adjust-lower">
+                <img src="img/gj3.JPG" alt="Gus e Jess - Momento 3" />
+              </div>
+              <div class="carousel-slide adjust-lower">
+                <img src="img/gj4.JPG" alt="Gus e Jess - Momento 4" />
+              </div>
+              <div class="carousel-slide adjust-lower">
+                <img src="img/gj5.JPG" alt="Gus e Jess - Momento 5" />
+              </div>
+              <div class="carousel-slide adjust-lower">
+                <img src="img/gj6.JPG" alt="Gus e Jess - Momento 6" />
+              </div>
+            </div>
+
+            <div class="carousel-indicators" id="carousel-dots">
+              <div
+                class="carousel-indicator active"
+                data-index="0"
+                aria-label="Slide 1"
+                role="button"
+              ></div>
+              <div
+                class="carousel-indicator"
+                data-index="1"
+                aria-label="Slide 2"
+                role="button"
+              ></div>
+              <div
+                class="carousel-indicator"
+                data-index="2"
+                aria-label="Slide 3"
+                role="button"
+              ></div>
+              <div
+                class="carousel-indicator"
+                data-index="3"
+                aria-label="Slide 4"
+                role="button"
+              ></div>
+              <div
+                class="carousel-indicator"
+                data-index="4"
+                aria-label="Slide 5"
+                role="button"
+              ></div>
+              <div
+                class="carousel-indicator"
+                data-index="5"
+                aria-label="Slide 6"
+                role="button"
+              ></div>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col items-center">
-          <span class="text-tea-dark/80 text-sm uppercase">Horário</span>
-          <span class="text-tea-dark font-serif text-xl">15:00 - 00:00</span>
+
+        <div class="mt-6 text-center italic text-tea-dark/80">Deslize para ver mais fotos</div>
+      </div>
+    </section>
+
+    <!-- DONATION SECTION -->
+    <section id="donation" class="my-10 flex w-full flex-col items-center px-6">
+      <div
+        class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg bg-white/30 border-white"
+      >
+        <h2 class="text-tea-dark mb-6 text-center font-serif text-3xl font-bold">Contribuição</h2>
+
+        <div class="text-tea-dark/80 text-center mb-8">
+          <p class="mb-4">
+            Para tornar nossa celebração ainda mais especial, aceitamos contribuições para ajudar na
+            realização do evento.
+          </p>
+          <p class="mb-4">
+            Sua presença é o mais importante para nós,<br />mas pedimos uma <br /><b
+              >contribuição mínima de R$50</b
+            ><br />
+            que será muito bem-vinda e recebida com gratidão.
+          </p>
+          <p class="italic">
+            Escaneie o QR code<br />
+            ou copie a chave no botão abaixo<br />
+            para realizar sua contribuição via PIX.
+          </p>
         </div>
-        <div class="flex flex-col items-center">
-          <span class="text-tea-dark/80 text-sm uppercase">Localização</span>
-          <span class="text-tea-dark font-serif text-xl">Rua Plínio Salgado, 549</span>
+
+        <div class="flex justify-center">
+          <div class="glass p-4 rounded-xl shadow transition-all duration-300 hover:shadow-md">
+            <img
+              src="img/qrcode.jpeg"
+              alt="QR Code para doação via PIX"
+              class="w-48 h-48 mx-auto"
+            />
+            <div class="text-center text-tea-dark/80 mt-2">
+              <button
+                id="copy-pix-key"
+                class="text-sm text-tea-dark underline cursor-pointer hover:text-tea-dark/70 transition-colors"
+                aria-label="Clique para copiar a chave PIX"
+              >
+                Clique aqui para copiar a chave
+              </button>
+              <p
+                class="text-xs mt-1 opacity-0 transition-opacity duration-300"
+                id="copy-confirmation"
+              >
+                Chave copiada com sucesso!
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="text-center">
-        <a href="#rsvp"
-          class="btn-tea btn-glass inline-block rounded-full px-8 py-3 font-medium text-white transition-all">
+    </section>
+
+    <!-- RSVP SECTION -->
+    <section id="rsvp" class="my-10 flex w-full flex-col items-center px-6">
+      <div
+        class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg bg-white/30 border-white"
+      >
+        <h2 class="text-tea-dark mb-4 text-center font-serif text-3xl font-bold">
           Confirmar Presença
-        </a>
-      </div>
-    </div>
-  </section>
+        </h2>
+        <p class="text-tea-dark/80 mb-6 text-center">
+          Por favor,<br />
+          confirme sua presença<br />
+          até 10 de Abril.
+        </p>
 
-  <!-- DETAILS SECTION -->
-  <section id="details" class="my-10 flex w-full flex-col items-center px-6">
-    <div class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg bg-white/30 border-white">
-      <h2 class="text-tea-dark mb-6 text-center font-serif text-3xl font-bold">
-        Detalhes do evento
-      </h2>
+        <form id="rsvp-form" class="space-y-5">
+          <!-- nome input -->
+          <div class="group relative">
+            <input
+              type="text"
+              id="name"
+              class="peer border-tea-dark/30 text-tea-dark focus:border-tea-dark w-full rounded-lg border glass px-4 py-3 pt-5 transition outline-none"
+              placeholder=" "
+              required
+              aria-label="Seu nome"
+            />
+            <label
+              for="name"
+              class="text-tea-dark/70 peer-focus:text-tea-dark absolute top-4 left-4 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:left-2 peer-[&:not(:placeholder-shown)]:text-xs"
+              >Seu Nome</label
+            >
+          </div>
 
-      <div class="mb-6 grid gap-8 md:grid-cols-2">
-        <div class="glass hover-scale rounded-xl p-4 shadow">
-          <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">
-            O que teremos
-          </h3>
-          <ul class="text-tea-dark/80 ml-5 list-disc space-y-2">
-            <li>Chá e Café</li>
-            <li>Outras bebidas</li>
-            <li>Chopp</li>
-            <li>Cachorro Quente</li>
-            <li>Momentos para fotos</li>
-            <li>Brincadeiras e sorteios</li>
-            <li>Lembrancinhas</li>
-          </ul>
-        </div>
+          <!-- número de convidados -->
+          <div class="group relative">
+            <input
+              type="number"
+              id="guests"
+              class="peer border-tea-dark/30 text-tea-dark focus:border-tea-dark w-full rounded-lg border glass px-4 py-3 pt-5 transition outline-none"
+              min="1"
+              max="4"
+              placeholder=" "
+              required
+              aria-label="Número de acompanhantes"
+            />
+            <label
+              for="guests"
+              class="text-tea-dark/70 peer-focus:text-tea-dark absolute top-4 left-4 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:left-2 peer-[&:not(:placeholder-shown)]:text-xs"
+              >Número de Acompanhantes</label
+            >
+          </div>
 
-        <div class="glass hover-scale rounded-xl p-4 shadow">
-          <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">
-            Informações Extras
-          </h3>
-          <ul class="text-tea-dark/80 ml-5 list-disc space-y-2">
-            <li>Clima permitindo, estaremos no jardim</li>
-            <li>Sinta-se à vontade para trazer bebidas e sobremesas</li>
-          </ul>
-        </div>
-      </div>
+          <!-- submit button -->
+          <button
+            type="submit"
+            class="btn-tea btn-glass w-full rounded-lg px-6 py-3 font-medium transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Confirmar Presença
+          </button>
+        </form>
 
-      <div class="glass hover-scale rounded-xl p-4 shadow">
-        <h3 class="text-tea-dark mb-2 font-serif text-xl font-semibold">
-          Localização
-        </h3>
-        <p class="text-tea-dark/80">
-          <a href="https://maps.google.com/?q=Rua+Plínio+Salgado,+549,+Bairro+Neva,+Cascavel" target="_blank"
-            rel="noopener noreferrer"
-            class="hover:bg-white/40 group flex flex-col items-start rounded-lg p-2 transition-all duration-300">
-            <span class="text-tea-dark">Rua Plínio Salgado, 549</span>
-            <span class="text-tea-dark">Bairro Neva</span>
-            <span class="text-tea-dark/60 mt-2 flex items-center text-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        <div class="mt-6 text-center text-sm text-tea-dark/80">
+          <p>Sua presença é importante para nós!</p>
+          <p class="mt-4">Para qualquer dúvida, entre em contato:</p>
+          <div class="mt-2 flex justify-center gap-4">
+            <a
+              href="mailto:gustavolnomelini@gmail.com"
+              class="flex items-center text-tea-dark hover:text-tea-dark/80 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
               </svg>
-              Ver no Google Maps
-            </span>
-          </a>
-        </p>
-      </div>
-      
-      <!-- Gallery section removed as it's no longer needed -->
-    </div>
-  </section>
-
-  <!-- CAROUSEL SECTION -->
-  <section id="carousel-section" class="my-10 flex w-full flex-col items-center px-6">
-    <div class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg bg-white/30 border-white">
-      <h2 class="text-tea-dark mb-6 text-center font-serif text-3xl font-bold">
-        Nossos Momentos
-      </h2>
-      
-      <div class="carousel-card">
-        <div class="carousel">
-          <div class="carousel-container" id="carousel-slides">
-            <div class="carousel-slide adjust-lower">
-              <img src="img/gj1.JPG" alt="Gus e Jess - Momento 1" />
-            </div>
-            <div class="carousel-slide adjust-lower">
-              <img src="img/gj2.JPG" alt="Gus e Jess - Momento 2" />
-            </div>
-            <div class="carousel-slide adjust-lower">
-              <img src="img/gj3.JPG" alt="Gus e Jess - Momento 3" />
-            </div>
-            <div class="carousel-slide adjust-lower">
-              <img src="img/gj4.JPG" alt="Gus e Jess - Momento 4" />
-            </div>
-            <div class="carousel-slide adjust-lower">
-              <img src="img/gj5.JPG" alt="Gus e Jess - Momento 5" />
-            </div>
-            <div class="carousel-slide adjust-lower">
-              <img src="img/gj6.JPG" alt="Gus e Jess - Momento 6" />
-            </div>
-          </div>
-          
-          <div class="carousel-indicators" id="carousel-dots">
-            <div class="carousel-indicator active" data-index="0" aria-label="Slide 1" role="button"></div>
-            <div class="carousel-indicator" data-index="1" aria-label="Slide 2" role="button"></div>
-            <div class="carousel-indicator" data-index="2" aria-label="Slide 3" role="button"></div>
-            <div class="carousel-indicator" data-index="3" aria-label="Slide 4" role="button"></div>
-            <div class="carousel-indicator" data-index="4" aria-label="Slide 5" role="button"></div>
-            <div class="carousel-indicator" data-index="5" aria-label="Slide 6" role="button"></div>
+              Email
+            </a>
+            <a
+              href="https://wa.me/5545998508634?text=Ol%C3%A1%20tenho%20d%C3%BAvidas%20sobre%20o%20Ch%C3%A1%20de%20Panela"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center text-tea-dark hover:text-tea-dark/80 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-2"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                />
+              </svg>
+              WhatsApp
+            </a>
           </div>
         </div>
       </div>
-      
-      <div class="mt-6 text-center italic text-tea-dark/80">
-        Deslize para ver mais fotos
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- DONATION SECTION -->
-  <section id="donation" class="my-10 flex w-full flex-col items-center px-6">
-    <div class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg bg-white/30 border-white">
-      <h2 class="text-tea-dark mb-6 text-center font-serif text-3xl font-bold">
-        Contribuição
-      </h2>
-      
-      <div class="text-tea-dark/80 text-center mb-8">
-        <p class="mb-4">
-          Para tornar nossa celebração ainda mais especial, aceitamos contribuições para ajudar na realização do evento.
-        </p>
-        <p class="mb-4">
-          Sua presença é o mais importante para nós,<br>mas pedimos uma <br><b>contribuição mínima de R$50</b><br> que será muito bem-vinda e recebida com gratidão.
-        </p>
-        <p class="italic">
-          Escaneie o QR code<br> ou copie a chave no botão abaixo<br> para realizar sua contribuição via PIX.
-        </p>
-      </div>
-      
-      <div class="flex justify-center">
-        <div class="glass p-4 rounded-xl shadow transition-all duration-300 hover:shadow-md">
-          <img src="img/qrcode.jpeg" alt="QR Code para doação via PIX" class="w-48 h-48 mx-auto" />
-          <div class="text-center text-tea-dark/80 mt-2">
-            <button 
-              id="copy-pix-key" 
-              class="text-sm text-tea-dark underline cursor-pointer hover:text-tea-dark/70 transition-colors"
-              aria-label="Clique para copiar a chave PIX">
-              Clique aqui para copiar a chave
-            </button>
-            <p class="text-xs mt-1 opacity-0 transition-opacity duration-300" id="copy-confirmation">Chave copiada com sucesso!</p>
+    <!-- ELEGANT TEACUP DECORATION -->
+    <section id="teacup" class="mt-8 flex w-full flex-col items-center px-6">
+      <div class="teacup-container mb-4 mt-8">
+        <div class="teacup">
+          <div class="tea"></div>
+          <div class="handle"></div>
+          <div class="saucer"></div>
+          <div class="steam-container">
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+            <!-- ...outras partículas de vapor... -->
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- RSVP SECTION -->
-  <section id="rsvp" class="my-10 flex w-full flex-col items-center px-6">
-    <div class="glass-card w-full max-w-2xl p-8 shadow-xl backdrop-blur-lg bg-white/30 border-white">
-      <h2 class="text-tea-dark mb-4 text-center font-serif text-3xl font-bold">
-        Confirmar Presença
-      </h2>
-      <p class="text-tea-dark/80 mb-6 text-center">
-        Por favor,<br> confirme sua presença<br> até 10 de Abril.
-      </p>
+    <!-- FOOTER SECTION -->
+    <footer class="py-6 text-center text-sm text-tea-dark/70">
+      <p>Com carinho, Gus & Jess &hearts;</p>
+      <p class="mt-2">&copy; 2025 - Todos os direitos reservados</p>
+    </footer>
 
-      <form id="rsvp-form" class="space-y-5">
-        <!-- nome input -->
-        <div class="group relative">
-          <input type="text" id="name"
-            class="peer border-tea-dark/30 text-tea-dark focus:border-tea-dark w-full rounded-lg border glass px-4 py-3 pt-5 transition outline-none"
-            placeholder=" " required aria-label="Seu nome" />
-          <label for="name"
-            class="text-tea-dark/70 peer-focus:text-tea-dark absolute top-4 left-4 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:left-2 peer-[&:not(:placeholder-shown)]:text-xs">Seu
-            Nome</label>
-        </div>
-
-        <!-- número de convidados -->
-        <div class="group relative">
-          <input type="number" id="guests"
-            class="peer border-tea-dark/30 text-tea-dark focus:border-tea-dark w-full rounded-lg border glass px-4 py-3 pt-5 transition outline-none"
-            min="1" max="4" placeholder=" " required aria-label="Número de acompanhantes" />
-          <label for="guests"
-            class="text-tea-dark/70 peer-focus:text-tea-dark absolute top-4 left-4 transition-all peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-[&:not(:placeholder-shown)]:-top-2.5 peer-[&:not(:placeholder-shown)]:left-2 peer-[&:not(:placeholder-shown)]:text-xs">Número
-            de Acompanhantes</label>
-        </div>
-
-        <!-- submit button -->
-        <button type="submit"
-          class="btn-tea btn-glass w-full rounded-lg px-6 py-3 font-medium transition-transform hover:scale-[1.02] active:scale-[0.98]">
-          Confirmar Presença
-        </button>
-      </form>
-      
-      <div class="mt-6 text-center text-sm text-tea-dark/80">
-        <p>Sua presença é importante para nós!</p>
-        <p class="mt-4">Para qualquer dúvida, entre em contato:</p>
-        <div class="mt-2 flex justify-center gap-4">
-          <a href="mailto:gustavolnomelini@gmail.com" class="flex items-center text-tea-dark hover:text-tea-dark/80 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Email
-          </a>
-          <a href="https://wa.me/5545998508634?text=Ol%C3%A1%20tenho%20d%C3%BAvidas%20sobre%20o%20Ch%C3%A1%20de%20Panela" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="flex items-center text-tea-dark hover:text-tea-dark/80 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
-            WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ELEGANT TEACUP DECORATION -->
-  <section id="teacup" class="mt-8 flex w-full flex-col items-center px-6">
-    <div class="teacup-container mb-4 mt-8">
-      <div class="teacup">
-        <div class="tea"></div>
-        <div class="handle"></div>
-        <div class="saucer"></div>
-        <div class="steam-container">
-          <div class="steam-particle"></div>
-          <div class="steam-particle"></div>
-          <!-- ...outras partículas de vapor... -->
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- FOOTER SECTION -->
-  <footer class="py-6 text-center text-sm text-tea-dark/70">
-    <p>Com carinho, Gus & Jess &hearts;</p>
-    <p class="mt-2">&copy; 2025 - Todos os direitos reservados</p>
-  </footer>
-
-  <script src="src/script.js"></script>
-</body>
-
+    <script src="src/script.js"></script>
+  </body>
 </html>

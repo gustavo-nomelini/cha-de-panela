@@ -221,8 +221,10 @@
             />
           </div>
           <div class="flex flex-col items-center">
-            <div class="flex items-center gap-4">
-              <div class="shooting-star">
+            <!-- Modificado: Ajustado o posicionamento da estrela para evitar que cruze qualquer texto -->
+            <div class="text-center relative mb-2">
+              <!-- Posicionando a estrela totalmente à esquerda e alinhada ao centro do título -->
+              <div class="shooting-star absolute -translate-y-1/2" style="left: -80px; top: 30%">
                 <img
                   src="img/star-fall-svgrepo-com.svg"
                   alt="shooting-star"
@@ -230,6 +232,7 @@
                   loading="lazy"
                 />
               </div>
+              <!-- Texto centralizado sem a estrela afetando o alinhamento -->
               <h1 class="text-tea-dark font-serif text-4xl font-bold">
                 Gus & Jess <br />
                 Chá de Panela

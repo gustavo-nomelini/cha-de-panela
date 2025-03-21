@@ -220,23 +220,27 @@
               loading="lazy"
             />
           </div>
-          <div class="flex flex-col items-center">
-            <!-- Modificado: Ajustado o posicionamento da estrela para evitar que cruze qualquer texto -->
-            <div class="text-center relative mb-2">
-              <!-- Posicionando a estrela totalmente à esquerda e alinhada ao centro do título -->
-              <div class="shooting-star absolute -translate-y-1/2" style="left: -80px; top: 30%">
-                <img
-                  src="img/star-fall-svgrepo-com.svg"
-                  alt="shooting-star"
-                  class="h-16"
-                  loading="lazy"
-                />
+          <div class="flex flex-col items-center w-full">
+            <!-- Modificado: Nova estrutura com grid para manter a estrela dentro do card -->
+            <div class="grid grid-cols-[auto_1fr] items-center w-full">
+              <!-- Coluna da estrela (à esquerda) -->
+              <div class="px-4 self-center">
+                <div class="shooting-star">
+                  <img
+                    src="img/star-fall-svgrepo-com.svg"
+                    alt="shooting-star"
+                    class="h-12"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <!-- Texto centralizado sem a estrela afetando o alinhamento -->
-              <h1 class="text-tea-dark font-serif text-4xl font-bold">
-                Gus & Jess <br />
-                Chá de Panela
-              </h1>
+              <!-- Coluna do título (centralizada) -->
+              <div class="text-center">
+                <h1 class="text-tea-dark font-serif text-4xl font-bold">
+                  Gus & Jess <br />
+                  Chá de Panela
+                </h1>
+              </div>
             </div>
             <p class="text-tea-dark mt-4 mb-6 text-center text-xl italic max-w-2xl">
               Junte-se conosco em uma tarde comemorativa para celebrar nosso lar, nossa união e amor
